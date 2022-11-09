@@ -1,0 +1,58 @@
+@use "@/style/global.sass" as v;
+
+.fontStyle {
+    font-size: larger;
+    text-transform: uppercase;
+    color: white;
+}
+
+.rowNavbarStyle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: v.$navBarHeight;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: v.$primaryColor;
+}
+
+.colProfilStyle {
+    width: 33%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.colNameStyle {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonProfilStyle{
+    margin-left: 30px;
+    background-color: v.$secondaryColor;
+    padding: 4px;
+    height: calc(v.$navBarHeight/1.6);
+    width: calc(v.$navBarHeight/1.6);
+    border-radius: 50%;
+    border: none;
+}
+
+.buttonNameStyle{
+    background-color: v.$primaryColor;
+    height: v.$navBarHeight;
+    border: none;
+}
+
+.profilLogo {
+    width: calc(v.$navBarHeight/2.8);
+    height: calc(v.$navBarHeight/2.8);
+    background-color: white;
+    -webkit-mask: url(../../../assets/svg/user.svg) no-repeat center;
+    mask: url(../../../assets/svg/user.svg) no-repeat center;
+}
