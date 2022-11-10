@@ -67,7 +67,7 @@
     margin: 20px;
 }
 
-.circleReservoirStyle {
+.circleReservoirRed {
     height: 70px;
     width: 70px;
     border-radius: 50%;
@@ -75,7 +75,24 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(180, 13, 13);
-    & .color {
-        background-color: rgb(47, 181, 47);
-    }
+}
+
+.circleReservoirYellow {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(226, 223, 19);
+}
+
+.circleReservoirGreen {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(47, 181, 47);
 }

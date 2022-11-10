@@ -13,7 +13,7 @@ export default new Vuex.Store({
     tauxPH: true as boolean,
     derniereMesure: "20 juillet" as string,
     reservoirPHplus: 10 as number,
-    reservoirPHmoins: 30 as number,
+    reservoirPHmoins: 25 as number,
     reservoirBandelette: 40 as number,
     bandeletteParJour: 1 as number,
     capacite: 0 as number,
@@ -21,5 +21,8 @@ export default new Vuex.Store({
     region: "" as string,
     dateOuverture: "" as string,
     dateFermeture: "" as string,
+    frequence: 0 as number,
+    unite: "" as string,
+    heures: "" as string,
   },
 });

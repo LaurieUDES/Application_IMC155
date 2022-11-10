@@ -8,10 +8,16 @@
         <h1 class="fontStyle">Type de piscine:</h1>
         <label class="fontStyle">{{ typeValue }}</label
         ><br /><br />
-        <h1 class="fontStyle">Plage d'utilisation de la piscine:</h1>
+        <h1 class="fontStyle">Plage de fonctionnement de la piscine:</h1>
         <label class="fontStyle"
           >{{ dateOuvertureValue }} - {{ dateFermetureValue }} </label
         ><br /><br />
+        <h1 class="fontStyle">Fréquence des tests:</h1>
+        <label>{{ frequence }} fois par {{ unite }}</label>
+        <br /><br />
+        <h1 class="fontStyle">Heures d'opération:</h1>
+        <label>{{ heures }}</label>
+        <br /><br />
         <h1 class="fontStyle">Votre région:</h1>
         <label class="fontStyle">{{ regionValue }}</label
         ><br /><br />
@@ -21,6 +27,7 @@
           </button>
         </div>
       </div>
+
       <div v-if="form" class="paddingStyle">
         <p><b>Quel est la capacité de votre piscine en litre?</b></p>
         <input v-model.number="capacite" placeholder="Nombre de litres" />
@@ -28,8 +35,8 @@
         <select v-model="type">
           <option disabled value="">Veuillez choisir une option</option>
           <option>Hors terre</option>
-          <option>mi-creusée</option>
-          <option>creusée</option>
+          <option>Mi-creusée</option>
+          <option>Creusée</option>
         </select>
         <p>
           <b
@@ -38,6 +45,29 @@
         </p>
         <input type="date" v-model="dateOuverture" />
         <input type="date" v-model="dateFermeture" />
+        <p>
+          <b>Combien de fois voulez effectuer les tests de votre piscine?</b>
+        </p>
+        <input type="number" min="1" max="6" v-model="frequence" />
+        <select v-model="unite">
+          <option disabled value="">Veuillez choisir une option</option>
+          <option>jour</option>
+          <option>semaine</option>
+        </select>
+        <p>
+          <b
+            >À quel moment de la journée voulez-vous que les tests soient
+            effectués?</b
+          >
+        </p>
+        <select v-model="heures">
+          <option disabled value="">Veuillez choisir une option</option>
+          <option>Entre 0 et 7h</option>
+          <option>Entre 7h et 12h</option>
+          <option>Entre 12h et 15h</option>
+          <option>Entre 15h et 19h</option>
+          <option>Entre 19h et 24h</option>
+        </select>
         <p><b>Quel est votre région?</b></p>
         <input v-model="region" placeholder="Indiquez votre région" />
         <div class="rowStyle">
@@ -69,6 +99,9 @@ export default defineComponent({
       form: false as boolean,
       capacite: 0 as number,
       type: "" as string,
+      frequence: 0 as number,
+      unite: "" as string,
+      heures: "" as string,
       region: "" as string,
       dateOuverture: "" as string,
       dateFermeture: "" as string,
@@ -105,8 +138,11 @@ export default defineComponent({
       this.$data.form = false;
     },
     saveForm() {
-      this.$set(store.state, "capacite", this.$data.capacite);
       this.$set(store.state, "type", this.$data.type);
+      this.$set(store.state, "capacite", this.$data.capacite);
+      this.$set(store.state, "frequence", this.$data.frequence);
+      this.$set(store.state, "unite", this.$data.unite);
+      this.$set(store.state, "heures", this.$data.heures);
       this.$set(store.state, "region", this.$data.region);
       this.$set(store.state, "dateOuverture", this.$data.dateOuverture);
       this.$set(store.state, "dateFermeture", this.$data.dateFermeture);

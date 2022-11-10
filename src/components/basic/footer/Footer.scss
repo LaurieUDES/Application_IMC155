@@ -28,14 +28,18 @@
 .buttonStyle{
     @extend .colStyle;
     background-color: white;
-    border: 2px;
-    border-color: grey;
+    border-color: rgb(218, 218, 218);
+    border-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: none;
+    border-right-style: none;
     padding: 4px;
-    height: v.$footerHeight;
+    height: v.$footerHeight - 4px;
 }
 
 .buttonDonneesStyle {
     @extend .buttonStyle;
+    border-left-style: none;
     & .button{
         background-color: rgb(grey, 0.2);
     }
@@ -43,6 +47,7 @@
 
 .buttonProduitsStyle {
     @extend .buttonStyle;
+    border-left-style: solid;
     & .button{
         background-color: rgb(grey, 0.2);
     }
