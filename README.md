@@ -1,4 +1,4 @@
-# equpe_o_app
+# equipe_o_app
 
 ## Project setup
 ```
